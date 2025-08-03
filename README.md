@@ -23,7 +23,11 @@ System combining Longstaff-Schwartz Monte Carlo simulation with RAG-powered sent
 
 ## Technical Flow
 
-News API collects historical articles for target tickers. RAG system builds FAISS index from article embeddings and uses GPT-4 for sentiment analysis. Sentiment scores adjust option pricing parameters (S0, volatility) dynamically. Longstaff-Schwartz method prices American options with Monte Carlo simulation. Backtesting framework identifies mispriced options and tracks optimal exercise performance.
+1. News API collects historical articles for target tickers.
+2. RAG system builds FAISS index from article embeddings and uses GPT-4 for sentiment analysis by finding relevant news articles.
+3. Sentiment scores adjust option pricing parameters (S0, volatility) dynamically.
+4. Longstaff-Schwartz method prices American options with Monte Carlo simulation.
+5. Backtesting framework identifies mispriced options and tracks optimal exercise performance.
 
 ## Performance Results
 
@@ -69,9 +73,9 @@ print(f"Delta: {result['delta']:.4f}")
 - `NEWS_API_KEY`: Historical news collection
 - `ALPHA_VANTAGE_KEY`: Volatility data (optional)
 
-## Outcomes...
+## Key Outcomes...
 
 1. **Dynamic Sentiment Integration**: Real-time news affects option pricing parameters
 2. **RAG-Powered Analysis**: Contextual similarity search for relevant historical news
 3. **Arbitrage Detection**: Automated identification of mispriced options
-4. **Optimal Exercise Timing**: Perfect execution simulation for performance measurement
+
